@@ -7,7 +7,7 @@
 class Employee:
     # lets incriment a number of employees each time a new initialization of the class occours (this is our __init__)
     raise_amount = 1.04
-    num = 0
+    num_of_emps = 0
 
     def __init__(self, first, last, pay):
         self.first = first
@@ -15,7 +15,7 @@ class Employee:
         self.pay = pay
         self.email = first + '.' + last + '@company.com'
 
-        Employee.num += 1
+        Employee.num_of_emps += 1
 
     def fullname(self):
         return('{}, {}'.format(self.first, self.last))
@@ -45,3 +45,5 @@ print(emp_1.__dict__)
 print(Employee.__dict__)    # NOTE that raise_amount does exist here.
 
 # if we add emp_1.raise_amount = 1.05, it will only change it for that instance becuase it is seached first before the class attribute. NOTE this only works because we did self.raise_amount in the apply_raise method and not Employee.raise_amount.
+
+print(Employee.num_of_emps)
